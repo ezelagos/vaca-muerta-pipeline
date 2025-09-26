@@ -1,0 +1,49 @@
+# 🚀 Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+*.so
+*.log
+*.out
+
+# 🚀 Entorno virtual
+.venv/
+env/
+venv/
+
+# 🚀 Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# 🚀 IDEs / Editores
+.vscode/
+.idea/
+*.swp
+
+# 🚀 Datos (raw grandes y procesados)
+data/raw/*
+!data/raw/fracturas_pozos.csv   # dejá solo un ejemplo chico
+data/processed/
+
+# 🚀 Logs
+logs/
+
+# 🚀 Archivos Spark / Hadoop
+*.crc
+*.parquet
+derby.log
+metastore_db/
+.log
+.tmp
+
+# 🚀 Otros
+.DS_Store
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Carpeta de datos procesados grandes
+data/processed/
