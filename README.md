@@ -5,7 +5,7 @@ Se compara el uso de Pandas (para datasets pequeños) y Apache Spark (para big d
 
 Quickstart
 1. Clonar el repositorio
-git clone https://github.com/tu_usuario/vaca-muerta-pipeline.git
+git clone https://github.com/ezelagos/vaca-muerta-pipeline.git
 cd vaca-muerta-pipeline
 
 2. Crear y activar entorno virtual

@@ -1,4 +1,9 @@
+from pathlib import Path
+
 from pyspark.sql import SparkSession
+
+ROOT = Path(__file__).resolve().parents[1]
+PROCESSED = ROOT / "data" / "processed" / "fracturas_spark"
 
 # 1. Crear SparkSession
 spark = SparkSession.builder \
@@ -6,7 +11,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # 2. Leer Parquet procesado
-df = spark.read.parquet("/home/eze/vaca-muerta-pipeline/data/processed/fracturas_spark")
+df = spark.read.parquet(str(PROCESSED))
 
 # 3. Mostrar primeras filas
 print("👉 Primeras filas del dataset procesado:")

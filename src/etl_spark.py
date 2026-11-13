@@ -1,5 +1,10 @@
+from pathlib import Path
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, to_date, concat_ws
+
+ROOT = Path(__file__).resolve().parents[1]
+PROCESSED = ROOT / "data" / "processed" / "fracturas_spark"
 
 #1. CREAR SPARK SESSION
 spark = SparkSession.builder \
@@ -8,7 +13,7 @@ spark = SparkSession.builder \
 
 #2. EXTRAER
 df = spark.read.option("header", "true").option("inferSchema", "true")\
-	.csv("data/raw/fracturas.csv")
+	.csv(str(ROOT / "data" / "raw" / "fracturas.csv"))
 
 #3. TRANSFORMAR
 df_clean = df \
@@ -21,7 +26,7 @@ df_clean = df \
 	)
 
 # 4. CARGAR
-output_path = "/home/eze/vaca-muerta-pipeline/data/processed/fracturas_spark"
+output_path = str(PROCESSED)
 
 df_clean.write.mode("overwrite") \
     .partitionBy("anio", "mes") \
