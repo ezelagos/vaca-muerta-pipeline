@@ -24,7 +24,8 @@ venv/
 
 # 🚀 Datos (raw grandes y procesados)
 data/raw/*
-!data/raw/fracturas_pozos.csv   # dejá solo un ejemplo chico
+# se versiona solo el dataset de ejemplo
+!data/raw/fracturas.csv
 data/processed/
 
 # 🚀 Logs
